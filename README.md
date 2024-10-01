@@ -4,8 +4,6 @@
 
 **Descrição do Projeto**
 
-Este projeto faz parte do desafio da residência em software ResTIC 36, oferecido pelo CEPEDI, e implementa um aplicativo de lista de tarefas (To-Do List) usando TypeScript e React Native. O design foi previamente definido no início do curso utilizando o Figma.
-
 O principal objetivo é criar um aplicativo para gerenciar tarefas, permitindo que os usuários possam adicionar, visualizar, organizar e remover tarefas. O aplicativo inclui funcionalidades como exibição da contagem total de tarefas, visualização de tarefas concluídas, e uso de cartões (CardNumber) para representar informações adicionais ou estatísticas.
 
 ## Funcionalidades Implementadas
