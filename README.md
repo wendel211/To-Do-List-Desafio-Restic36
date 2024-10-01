@@ -78,7 +78,7 @@ Copiar código
 npm start
 Isso abrirá o aplicativo no emulador ou dispositivo físico, dependendo do ambiente configurado.
 
-**Contribuições**
+## **Contribuições**
 Se você deseja contribuir com este projeto, siga os passos abaixo:
 
 Fork o repositório.
