@@ -1,69 +1,95 @@
-# Lista de Tarefas - Desafio ResTIC 36
 
-## Descrição do Projeto
 
-Este projeto corresponde ao desafio da residência em software ResTIC36, implementando o design proposto no início do curso no Figma. Faz parte da trilha de desenvolvimento mobile, oferecida pelo CEPEDI.
+## Lista de Tarefas - Desafio ResTIC 36
 
-O objetivo é criar uma aplicação de lista de tarefas utilizando React Native, que permite adicionar tarefas, visualizar a lista, ver detalhes das tarefas e exibir uma contagem total. O aplicativo também inclui cartões (`CardNumber`) para representar informações adicionais ou estatísticas.
+**Descrição do Projeto**
 
-### Funcionalidades Implementadas
+O principal objetivo é criar um aplicativo para gerenciar tarefas, permitindo que os usuários possam adicionar, visualizar, organizar e remover tarefas. O aplicativo inclui funcionalidades como exibição da contagem total de tarefas, visualização de tarefas concluídas, e uso de cartões (CardNumber) para representar informações adicionais ou estatísticas.
 
-- **Adição de Tarefas**: Permite ao usuário adicionar novas tarefas com descrição. O sistema verifica campos vazios e evita duplicações.
-- **Contagem de Tarefas**: Exibe o total de tarefas e finalizadas. A contagem é atualizada automaticamente.
-- **Ordenação de Tarefas**: Utiliza `sort` e `useMemo` para ordenar tarefas por status (em aberto primeiro).
-- **Interface de Usuário**:
-  - Campo de entrada para novas tarefas.
-  - Botão com ícone para adicionar tarefas.
-  - Lista de tarefas dividida entre "em aberto" e "finalizadas".
-  - Mensagens para listas vazias.
-  - Remoção de tarefas com confirmação.
-  - Cartões (`CardNumber`) para exibir estatísticas.
-- **Gerenciamento de Estado**: Usa `useContext` e `AsyncStorage` para persistência de dados.
-- **Validação de Formulário**: Implementa validação básica com `Formik` e `Yup`.
-- **Layout Responsivo**: Usa `flex-grow` para garantir que o texto das tarefas não quebre o layout.
-- **Alertas Personalizados**: Implementação de componentes de alerta customizados.
+## Funcionalidades Implementadas
 
-### Tecnologias Utilizadas
+1. Adição de Tarefas
+Descrição: O usuário pode adicionar uma nova tarefa inserindo uma descrição no campo de entrada.
+Validação: O sistema evita o cadastro de tarefas sem descrição e impede duplicações, utilizando o pacote Formik para gerenciamento de formulários e Yup para validação.
+2. Contagem de Tarefas
+Descrição: Exibe o número total de tarefas cadastradas e o número de tarefas finalizadas.
+Atualização Automática: A contagem é atualizada automaticamente conforme novas tarefas são adicionadas ou finalizadas.
+3. Ordenação de Tarefas
+Descrição: As tarefas são automaticamente ordenadas pela sua situação (em aberto ou finalizadas), exibindo as tarefas em aberto no topo.
+Tecnologia: Utiliza a função sort combinada com useMemo para otimização do desempenho.
+4. Interface de Usuário
+Componentes:
+Campo de entrada de texto para novas tarefas.
+Botão com ícone para adicionar a tarefa.
+Lista de tarefas dividida em duas seções: "Em Aberto" e "Finalizadas".
+Mensagem indicando que a lista está vazia, caso não haja tarefas cadastradas.
+Remoção de tarefas com uma janela de confirmação.
+Cartões (CardNumber) exibindo informações adicionais, como contagem de tarefas e outras estatísticas.
+5. Gerenciamento de Estado
+Descrição: O estado global do aplicativo é gerenciado usando React Context API para garantir consistência dos dados entre diferentes componentes.
+Persistência: As tarefas são persistidas localmente utilizando AsyncStorage, garantindo que os dados não sejam perdidos ao fechar o aplicativo.
+6. Validação de Formulário
+Tecnologia: A validação de entrada de dados é implementada com Formik e Yup para assegurar que o usuário não insira dados inválidos.
+7. Layout Responsivo
+Descrição: O layout foi projetado para ser responsivo, utilizando propriedades como flex-grow para garantir que os textos das tarefas se ajustem corretamente, evitando quebras no design.
+8. Alertas Personalizados
+Descrição: Componentes customizados foram criados para exibir alertas e mensagens ao usuário, como confirmações ao excluir tarefas.
+Tecnologias Utilizadas
+React Native: Framework principal para desenvolvimento do aplicativo.
+TypeScript: Tipagem estática para maior robustez do código.
+React Navigation: Biblioteca utilizada para navegação entre telas.
+Styled Components: Utilizado para estilização e temas no aplicativo.
+React Context API: Gerenciamento de estado global entre os componentes.
+AsyncStorage: Utilizado para armazenamento e persistência de dados localmente.
+Formik & Yup: Implementados para gerenciamento e validação de formulários.
+Estrutura do Projeto
+Principais Diretórios:
+src/components: Componentes reutilizáveis como CardNumber, lista de tarefas e botões.
+src/screens: Telas principais do aplicativo, como Home, Detalhes da Tarefa, etc.
+src/context: Contexto global para gerenciamento do estado do aplicativo.
+src/hooks: Custom hooks para funcionalidades reutilizáveis, como integração com o AsyncStorage.
+src/styles: Definições de estilo para os componentes e telas do aplicativo.
+Instruções para Executar o Projeto
+1. Clonar o Repositório
+Para obter uma cópia local do projeto, execute o seguinte comando:
 
-- **React Native**: Framework principal para desenvolvimento móvel.
-- **React Navigation**: Navegação entre telas.
-- **Styled Components**: Estilização e temas.
-- **React Context API**: Gerenciamento de estado global.
-- **AsyncStorage**: Persistência de dados local.
-- **Formik & Yup**: Validação de formulários.
+bash
+Copiar código
+git clone https://github.com/wendel211/To-Do-List-Desafio-Restic36.git
+2. Navegar até o Diretório do Projeto
+Entre no diretório recém-clonado:
 
-## Instruções para Executar o Projeto
+bash
+Copiar código
+cd ToDoList_DesafioResTIC36
+3. Instalar as Dependências
+Instale todas as dependências necessárias utilizando o gerenciador de pacotes npm:
 
-1. **Clone o Repositório**:
-   ```bash
-   git clone https://github.com/diogomasc/ToDoList_DesafioResTIC36.git
-   ```
+bash
+Copiar código
+npm install
+4. Iniciar o Projeto
+Por fim, inicie o projeto no ambiente de desenvolvimento com o seguinte comando:
 
-2. **Navegue até o Diretório do Projeto**:
-   ```bash
-   cd ToDoList_DesafioResTIC36
-   ```
+bash
+Copiar código
+npm start
+Isso abrirá o aplicativo no emulador ou dispositivo físico, dependendo do ambiente configurado.
 
-3. **Instale as Dependências**:
-   ```bash
-   npm install
-   ```
+## **Contribuições**
+Se você deseja contribuir com este projeto, siga os passos abaixo:
 
-4. **Inicie o Projeto**:
-   ```bash
-   npm start
-   ```
-
-## Telas 
-
-<div style="display: flex; overflow-x: auto;">
-   <img src="https://github.com/user-attachments/assets/0ddddd38-5dc9-4018-9299-deab233fc158" alt="Tela 1" style="height: 500px; margin-right: 10px;">
-   <img src="https://github.com/user-attachments/assets/a91b3929-aaf2-4bfb-a872-a960b9276d5f" alt="Tela 2" style="height: 500px; margin-right: 10px;">
-   <img src="https://github.com/user-attachments/assets/bf1e0c39-d707-4b5f-b2f7-9e9bbd71b6b4" alt="Tela 3" style="height: 500px; margin-right: 10px;">
-   <img src="https://github.com/user-attachments/assets/fb19cf3d-35ce-4487-8798-38805757208c" alt="Tela 4" style="height: 500px; margin-right: 10px;">
-   <img src="https://github.com/user-attachments/assets/bbb180c0-1e0e-44c2-86bc-62c65a82b06d" alt="Tela 5" style="height: 500px; margin-right: 10px;">
-   <img src="https://github.com/user-attachments/assets/81040181-0b0f-4137-8f7d-a67714e91dbe" alt="Tela 6" style="height: 500px; margin-right: 10px;">
-   <img src="https://github.com/user-attachments/assets/a671f2e4-b38a-4c36-8d6a-d8f2ed90d373" alt="Tela 7" style="height: 500px; margin-right: 10px;">
-   <img src="https://github.com/user-attachments/assets/0d9819cc-6d72-42b1-bc25-4ab4fa8e5606" alt="Tela 8" style="height: 500px; margin-right: 10px;">
-
-</div>
+Fork o repositório.
+Crie uma nova branch com a funcionalidade ou correção:
+bash
+Copiar código
+git checkout -b minha-feature
+Faça um commit com suas mudanças:
+bash
+Copiar código
+git commit -m 'Adiciona nova funcionalidade'
+Envie para a branch:
+bash
+Copiar código
+git push origin minha-feature
+Crie um Pull Request para análise.
