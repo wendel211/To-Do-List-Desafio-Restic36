@@ -8,19 +8,7 @@ import { RegisterButton } from "../../components/RegisterButton";
 
 const WelcomeScreen = () => {
   const navigation = useNavigation();
-
-  const handleLogin = () => {
-    Alert.alert(
-      "Login Bem-sucedido",
-      "Você foi autenticado com sucesso!",
-      [
-        { 
-          text: "OK", 
-          onPress: () => navigation.navigate("Login") 
-        }
-      ]
-    );
-  };
+  
 
   return (
     <SafeAreaView style={styles.container}>
@@ -32,8 +20,8 @@ const WelcomeScreen = () => {
         <Text style={styles.headerText}>To Do List</Text>
         <Text style={styles.welcomeText}>Comece a escrever suas ideias e tarefas! </Text>
         <View style={styles.buttonContainer}>
-          <LoginButton onPress={handleLogin} />
-          <RegisterButton onPress={() => navigation.navigate("Home")} />
+          <LoginButton onPress={() => navigation.navigate("Login")} />
+          <RegisterButton onPress={() => navigation.navigate("Register")} />
         </View>
       </View>
     </SafeAreaView>

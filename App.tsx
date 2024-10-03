@@ -4,9 +4,11 @@
   import { createNativeStackNavigator } from "@react-navigation/native-stack";
   import Home from "./src/screens/Home";
   import WelcomeScreen from "./src/screens/Welcome";
+  import RegisterScreen from "./src/screens/Register";
   import LoginScreen from "./src/screens/Login";
   import NewTask from "./src/screens/NewTask";
   import TaskProvider from "./src/context/TaskContext";
+
 
   export default function App() {
     const Stack = createNativeStackNavigator();
@@ -20,6 +22,7 @@
             >
               <Stack.Screen name="Welcome" component={WelcomeScreen} />
               <Stack.Screen name="Login" component={LoginScreen} />
+              <Stack.Screen name="Register" component={RegisterScreen} />
               <Stack.Screen name="Home" component={Home} />
               <Stack.Screen name="NewTask" component={NewTask} />
             </Stack.Navigator>
